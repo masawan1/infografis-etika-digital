@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis: Warga Digital yang Beretika</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F3D4;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-step {
+            border: 2px solid #00B8A9;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+            color: #004D40;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .flowchart-arrow {
+            font-size: 2rem;
+            color: #00B8A9;
+            font-weight: bold;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center my-8 md:my-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#F6416C] leading-tight">Warga Digital yang Beretika</h1>
+            <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto text-gray-600">Panduan Anda untuk Menghargai Karya & Menyaring Konten Negatif di Dunia Maya.</p>
+        </header>
+
+        <main>
+            <section id="hki" class="mb-12">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-[#00B8A9] mb-2">⚖️ Hak Kekayaan Intelektual (HKI)</h2>
+                    <p class="mb-6 text-gray-600">HKI adalah hak eksklusif bagi para kreator untuk melindungi karya dan inovasi mereka. Di era digital, menghargai HKI adalah kunci untuk mendorong kreativitas yang berkelanjutan.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="chart-container">
+                             <canvas id="pelanggaranHkiChart"></canvas>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-[#F6416C]">Bentuk Pelanggaran HKI yang Umum</h3>
+                             <p class="mb-6 text-gray-600">Pelanggaran HKI terjadi dalam berbagai bentuk, seringkali tanpa disadari. Bagan ini menunjukkan perkiraan prevalensi tiga jenis pelanggaran utama di kalangan pengguna digital.</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start"><span class="font-bold text-2xl text-[#00B8A9] mr-3">1.</span><div><strong class="text-gray-900">Plagiarisme:</strong> Mengakui karya orang lain sebagai milik sendiri tanpa atribusi.</div></li>
+                                <li class="flex items-start"><span class="font-bold text-2xl text-[#00B8A9] mr-3">2.</span><div><strong class="text-gray-900">Penggunaan Tanpa Izin:</strong> Memakai konten (gambar, musik) untuk tujuan komersial atau pribadi tanpa izin.</div></li>
+                                <li class="flex items-start"><span class="font-bold text-2xl text-[#00B8A9] mr-3">3.</span><div><strong class="text-gray-900">Pembajakan:</strong> Mendistribusikan karya berhak cipta seperti perangkat lunak atau film secara ilegal.</div></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="my-8 border-gray-200">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                         <div>
+                            <h3 class="text-xl font-bold mb-4 text-[#F6416C]">Dampak Serius Pelanggaran HKI</h3>
+                             <p class="mb-6 text-gray-600">Melanggar HKI bukan hanya masalah etika, tetapi juga membawa konsekuensi nyata yang merugikan banyak pihak. Setiap dampak memiliki bobot yang signifikan dalam ekosistem kreatif.</p>
+                             <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                 <li>Merugikan pencipta secara finansial dan moral.</li>
+                                 <li>Menghadapi sanksi hukum berat seperti denda & penjara.</li>
+                                 <li>Menghambat lahirnya inovasi dan karya baru.</li>
+                                 <li>Merusak reputasi dan kredibilitas personal atau institusi.</li>
+                             </ol>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="dampakHkiChart"></canvas>
+                        </div>
+                    </div>
+                     <div class="mt-10 bg-[#00B8A9] text-white rounded-lg p-6">
+                        <h3 class="font-bold text-2xl mb-4">✅ Cara Menghargai HKI</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                            <div class="bg-[#F8F3D4] text-[#004D40] p-4 rounded-lg">
+                                <div class="text-4xl mb-2">©️</div>
+                                <p>Selalu cantumkan sumber asli.</p>
+                            </div>
+                            <div class="bg-[#F8F3D4] text-[#004D40] p-4 rounded-lg">
+                                <div class="text-4xl mb-2">✉️</div>
+                                <p>Minta izin untuk penggunaan khusus.</p>
+                            </div>
+                             <div class="bg-[#F8F3D4] text-[#004D40] p-4 rounded-lg">
+                                <div class="text-4xl mb-2">CC</div>
+                                <p>Gunakan konten berlisensi Creative Commons.</p>
+                            </div>
+                            <div class="bg-[#F8F3D4] text-[#004D40] p-4 rounded-lg">
+                                <div class="text-4xl mb-2">🛒</div>
+                                <p>Beli produk orisinal dan legal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="konten-negatif" class="mb-12">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-[#F6416C] mb-2">🚫 Menyaring Konten Negatif</h2>
+                    <p class="mb-6 text-gray-600">Dunia digital penuh dengan informasi. Namun, tidak semuanya positif. Belajar mengenali dan menghindari konten negatif sangat penting untuk kesehatan mental dan keamanan Anda.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="chart-container">
+                             <canvas id="kontenNegatifChart"></canvas>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-[#00B8A9]">Jenis Konten Negatif yang Harus Diwaspadai</h3>
+                            <p class="mb-6 text-gray-600">Konten negatif dapat menyebar dengan cepat dan berdampak buruk. Bagan ini memetakan berbagai jenis konten berbahaya yang sering ditemui online.</p>
+                            <ul class="space-y-2">
+                                <li><strong class="text-[#F6416C]">Hoaks:</strong> Informasi palsu yang menyesatkan.</li>
+                                <li><strong class="text-[#F6416C]">Ujaran Kebencian:</strong> Serangan terhadap kelompok tertentu.</li>
+                                <li><strong class="text-[#F6416C]">Cyberbullying:</strong> Perundungan di dunia maya.</li>
+                                <li><strong class="text-[#F6416C]">Penipuan Online:</strong> Skema untuk mencuri data atau uang.</li>
+                                 <li><strong class="text-[#F6416C]">Konten Kekerasan:</strong> Materi grafis yang mengganggu.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-8 border-gray-200">
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center text-[#00B8A9]">Strategi Efektif Menyaring Informasi</h3>
+                        <p class="text-center max-w-2xl mx-auto mb-8 text-gray-600">Jangan hanya menjadi konsumen pasif. Ambil langkah proaktif untuk melindungi diri Anda dan menciptakan lingkungan online yang lebih sehat dengan alur proses berikut.</p>
+                        <div class="flex flex-col md:flex-row justify-center items-center gap-y-4 md:gap-x-4">
+                            <div class="flowchart-step w-full md:w-48">1. Temukan Konten</div>
+                            <div class="flowchart-arrow transform md:-translate-y-0 -rotate-90 md:rotate-0">➔</div>
+                            <div class="flowchart-step w-full md:w-48">2. Verifikasi Sumber</div>
+                             <div class="flowchart-arrow transform md:-translate-y-0 -rotate-90 md:rotate-0">➔</div>
+                            <div class="flowchart-step w-full md:w-48">3. Pikir Sebelum Berbagi</div>
+                             <div class="flowchart-arrow transform md:-translate-y-0 -rotate-90 md:rotate-0">➔</div>
+                            <div class="flowchart-step bg-[#F6416C] text-white border-[#F6416C] w-full md:w-48">4. Laporkan & Blokir</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-8 mb-4">
+            <div class="bg-[#004D40] text-white rounded-lg p-6 max-w-4xl mx-auto">
+                 <h3 class="text-2xl font-bold mb-3 text-[#FFDE7D]">🤝 Jadilah Warga Digital yang Bertanggung Jawab</h3>
+                 <p class="text-gray-300">Dengan menghargai karya, berpikir kritis, dan menjaga sikap positif, kita semua dapat berkontribusi pada ekosistem digital yang lebih baik dan lebih aman untuk semua.</p>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">Infografis Etika Digital | Dibuat dengan HTML, Tailwind CSS, dan Chart.js</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const energeticPlayfulPalette = {
+                main: '#00B8A9', 
+                background: '#F8F3D4', 
+                accent: '#F6416C', 
+                highlight: '#FFDE7D',
+                secondary: '#00796B',
+                tertiary: '#C3423F'
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                return Array.isArray(label) ? label.join(' ') : label;
+            };
+            
+            const wrapLabel = (label, maxLength = 16) => {
+                if (label.length <= maxLength) return label;
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const commonChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#374151',
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#333',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                        
+                    }
+                }
+            };
+
+            new Chart(document.getElementById('pelanggaranHkiChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Plagiarisme', wrapLabel('Penggunaan Konten Tanpa Izin'), 'Pembajakan'],
+                    datasets: [{
+                        label: 'Prevalensi Pelanggaran (%)',
+                        data: [45, 35, 20],
+                        backgroundColor: [energeticPlayfulPalette.accent, energeticPlayfulPalette.highlight, energeticPlayfulPalette.main],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    indexAxis: 'y',
+                    plugins: { ...commonChartOptions.plugins, legend: { display: false } },
+                    scales: {
+                        x: {
+                            ticks: { color: '#374151' },
+                            grid: { display: false }
+                        },
+                        y: {
+                            ticks: { color: '#374151' }
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('dampakHkiChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Merugikan Pencipta', 'Sanksi Hukum', 'Menghambat Inovasi', 'Merusak Reputasi'],
+                    datasets: [{
+                        label: 'Dampak Pelanggaran',
+                        data: [25, 25, 25, 25],
+                        backgroundColor: [
+                            energeticPlayfulPalette.accent,
+                            energeticPlayfulPalette.main,
+                            energeticPlayfulPalette.highlight,
+                            energeticPlayfulPalette.secondary
+                        ],
+                        hoverOffset: 4
+                    }]
+                },
+                options: { ...commonChartOptions }
+            });
+
+            new Chart(document.getElementById('kontenNegatifChart'), {
+                type: 'polarArea',
+                data: {
+                    labels: ['Hoaks', 'Ujaran Kebencian', 'Cyberbullying', wrapLabel('Penipuan Online'), 'Konten Kekerasan'],
+                    datasets: [{
+                        label: 'Tingkat Bahaya',
+                        data: [8, 7, 9, 8, 6],
+                        backgroundColor: [
+                            'rgba(246, 65, 108, 0.7)',
+                            'rgba(0, 184, 169, 0.7)',
+                            'rgba(255, 222, 125, 0.7)',
+                            'rgba(0, 121, 107, 0.7)',
+                            'rgba(195, 66, 63, 0.7)',
+                        ],
+                        borderWidth: 1,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: { ...commonChartOptions }
+            });
+        });
+    </script>
+</body>
+</html>
